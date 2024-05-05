@@ -9,7 +9,7 @@
 <meta name="author" content="Koy Jorgenson">
 <meta name="dcterms.date" content="2024-05-03">
 
-<title>Koy Jorgenson MLB Dynasty Discovery - Are the New York Yankees still the most winning Dynasty?</title>
+<title>Koy Jorgenson Sports Media Site - Will Anyone Ever Reach Stephen Curry’s Three Point Greatness?</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -108,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">Koy Jorgenson MLB Dynasty Discovery</span>
+    <span class="navbar-title">Koy Jorgenson Sports Media Site</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -142,7 +142,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Are the New York Yankees still the most winning Dynasty?</h1>
+      <h1 class="title">Will Anyone Ever Reach Stephen Curry’s Three Point Greatness?</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">sports</div>
                 <div class="quarto-category">data</div>
@@ -191,11 +191,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(wehoop)</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>CurryTotals <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"CurryThreePointers.csv"</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>AllTimeThrees <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"ThreePointData.csv"</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>CurryUpdated <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"CurryThreePointers2.csv"</span>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>ModernThrees <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"threepointmoderndataupdated.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>CurryUpdated <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"CurryThreePointers2.csv"</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>ModernThrees <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"threepointmoderndataupdated.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
+<p>Stephen Curry has been the best shooter in our game for a long time. It isn’t very often where a player comes into the league and leaves a stamp in a new area of the game like Stephen Curry did. In 15 years, Stephen Curry has accomplished great things consisting of NBA championships along with one of his biggest individual accomplishments which was breaking the all-time 3-point record. So, the question is, how much longer is he going to play, and is he going to make his record much harder to reach?</p>
+<p>Let’s look at his career so far with what he has achieved on his three-point totals.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -204,27 +205,58 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="st">`</span><span class="at">3P</span><span class="st">`</span> <span class="sc">&lt;</span> <span class="dv">500</span>) <span class="sc">|&gt;</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Season))</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>Careertotals <span class="sc">|&gt;</span> <span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>Careertotals <span class="sc">|&gt;</span> </span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">3P</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"Total Threes"</span>,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">3P%</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"Three Point Percentage"</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Is Stephen Curry The Greatest Shooter Ever"</span>,</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Stephen Curry continues to increase his all time shooting record with great 2024 season."</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> <span class="fu">tab_style</span>(</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_text</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">weight =</span> <span class="st">"bold"</span>, <span class="at">align =</span> <span class="st">"left"</span>),</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_title</span>(<span class="st">"title"</span>)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> <span class="fu">tab_style</span>(</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_text</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">align =</span> <span class="st">"left"</span>),</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_title</span>(<span class="st">"subtitle"</span>)</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_source_note</span>(</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">source_note =</span> <span class="fu">md</span>(<span class="st">"**By:** Koy Jorgenson  |  **Source:** Basketball Reference: Stephen Curry stats, height, weight, position, draft status and more. Basketball. (n.d.). https://www.basketball-reference.com/players/c/curryst01.html"</span>)</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>     <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(<span class="at">columns =</span> <span class="fu">everything</span>()),</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>     <span class="at">style =</span> <span class="fu">list</span>(</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>       <span class="fu">cell_borders</span>(<span class="at">sides =</span> <span class="st">"bottom"</span>, <span class="at">weight =</span> <span class="fu">px</span>(<span class="dv">3</span>)),</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>       <span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>, <span class="at">size=</span><span class="dv">12</span>)</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>     )</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>   ) <span class="sc">|&gt;</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_row_striping</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_table_lines</span>(<span class="st">"none"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fmt_percent</span>(</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">`</span><span class="at">3P%</span><span class="st">`</span>),</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">1</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 
-<div id="vuumoimqyu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#vuumoimqyu table {
+<div id="lmzsuoptvj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#lmzsuoptvj table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#vuumoimqyu thead, #vuumoimqyu tbody, #vuumoimqyu tfoot, #vuumoimqyu tr, #vuumoimqyu td, #vuumoimqyu th {
+#lmzsuoptvj thead, #lmzsuoptvj tbody, #lmzsuoptvj tfoot, #lmzsuoptvj tr, #lmzsuoptvj td, #lmzsuoptvj th {
   border-style: none;
 }
 
-#vuumoimqyu p {
+#lmzsuoptvj p {
   margin: 0;
   padding: 0;
 }
 
-#vuumoimqyu .gt_table {
+#lmzsuoptvj .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -233,16 +265,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   color: #333333;
   font-size: 16px;
   font-weight: normal;
-  font-style: normal;
+  font-style: none;
   background-color: #FFFFFF;
   width: auto;
-  border-top-style: solid;
+  border-top-style: none;
   border-top-width: 2px;
   border-top-color: #A8A8A8;
   border-right-style: none;
   border-right-width: 2px;
   border-right-color: #D3D3D3;
-  border-bottom-style: solid;
+  border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #A8A8A8;
   border-left-style: none;
@@ -250,12 +282,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#vuumoimqyu .gt_caption {
+#lmzsuoptvj .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#vuumoimqyu .gt_title {
+#lmzsuoptvj .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -267,7 +299,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#vuumoimqyu .gt_subtitle {
+#lmzsuoptvj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -279,7 +311,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#vuumoimqyu .gt_heading {
+#lmzsuoptvj .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -291,17 +323,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#vuumoimqyu .gt_bottom_border {
-  border-bottom-style: solid;
+#lmzsuoptvj .gt_bottom_border {
+  border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#vuumoimqyu .gt_col_headings {
-  border-top-style: solid;
+#lmzsuoptvj .gt_col_headings {
+  border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
-  border-bottom-style: solid;
+  border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
   border-left-style: none;
@@ -312,7 +344,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#vuumoimqyu .gt_col_heading {
+#lmzsuoptvj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -332,7 +364,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#vuumoimqyu .gt_column_spanner_outer {
+#lmzsuoptvj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -344,16 +376,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#vuumoimqyu .gt_column_spanner_outer:first-child {
+#lmzsuoptvj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#vuumoimqyu .gt_column_spanner_outer:last-child {
+#lmzsuoptvj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#vuumoimqyu .gt_column_spanner {
-  border-bottom-style: solid;
+#lmzsuoptvj .gt_column_spanner {
+  border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
   vertical-align: bottom;
@@ -364,11 +396,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#vuumoimqyu .gt_spanner_row {
+#lmzsuoptvj .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#vuumoimqyu .gt_group_heading {
+#lmzsuoptvj .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -378,10 +410,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   font-size: 100%;
   font-weight: initial;
   text-transform: inherit;
-  border-top-style: solid;
+  border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
-  border-bottom-style: solid;
+  border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
   border-left-style: none;
@@ -394,36 +426,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#vuumoimqyu .gt_empty_group_heading {
+#lmzsuoptvj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
   font-weight: initial;
-  border-top-style: solid;
+  border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
-  border-bottom-style: solid;
+  border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
   vertical-align: middle;
 }
 
-#vuumoimqyu .gt_from_md > :first-child {
+#lmzsuoptvj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#vuumoimqyu .gt_from_md > :last-child {
+#lmzsuoptvj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#vuumoimqyu .gt_row {
+#lmzsuoptvj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
   padding-right: 5px;
   margin: 10px;
-  border-top-style: solid;
+  border-top-style: none;
   border-top-width: 1px;
   border-top-color: #D3D3D3;
   border-left-style: none;
@@ -436,26 +468,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#vuumoimqyu .gt_stub {
+#lmzsuoptvj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
   font-weight: initial;
   text-transform: inherit;
-  border-right-style: solid;
+  border-right-style: none;
   border-right-width: 2px;
   border-right-color: #D3D3D3;
   padding-left: 5px;
   padding-right: 5px;
 }
 
-#vuumoimqyu .gt_stub_row_group {
+#lmzsuoptvj .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
   font-weight: initial;
   text-transform: inherit;
-  border-right-style: solid;
+  border-right-style: none;
   border-right-width: 2px;
   border-right-color: #D3D3D3;
   padding-left: 5px;
@@ -463,15 +495,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#vuumoimqyu .gt_row_group_first td {
+#lmzsuoptvj .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#vuumoimqyu .gt_row_group_first th {
+#lmzsuoptvj .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#vuumoimqyu .gt_summary_row {
+#lmzsuoptvj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -481,26 +513,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#vuumoimqyu .gt_first_summary_row {
-  border-top-style: solid;
+#lmzsuoptvj .gt_first_summary_row {
+  border-top-style: none;
   border-top-color: #D3D3D3;
 }
 
-#vuumoimqyu .gt_first_summary_row.thick {
+#lmzsuoptvj .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#vuumoimqyu .gt_last_summary_row {
+#lmzsuoptvj .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
   padding-right: 5px;
-  border-bottom-style: solid;
+  border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#vuumoimqyu .gt_grand_summary_row {
+#lmzsuoptvj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -510,40 +542,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#vuumoimqyu .gt_first_grand_summary_row {
+#lmzsuoptvj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
   padding-right: 5px;
-  border-top-style: double;
+  border-top-style: none;
   border-top-width: 6px;
   border-top-color: #D3D3D3;
 }
 
-#vuumoimqyu .gt_last_grand_summary_row_top {
+#lmzsuoptvj .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
   padding-right: 5px;
-  border-bottom-style: double;
+  border-bottom-style: none;
   border-bottom-width: 6px;
   border-bottom-color: #D3D3D3;
 }
 
-#vuumoimqyu .gt_striped {
+#lmzsuoptvj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#vuumoimqyu .gt_table_body {
-  border-top-style: solid;
+#lmzsuoptvj .gt_table_body {
+  border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
-  border-bottom-style: solid;
+  border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#vuumoimqyu .gt_footnotes {
+#lmzsuoptvj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -557,7 +589,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#vuumoimqyu .gt_footnote {
+#lmzsuoptvj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -566,7 +598,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#vuumoimqyu .gt_sourcenotes {
+#lmzsuoptvj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -580,7 +612,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#vuumoimqyu .gt_sourcenote {
+#lmzsuoptvj .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -588,127 +620,139 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#vuumoimqyu .gt_left {
+#lmzsuoptvj .gt_left {
   text-align: left;
 }
 
-#vuumoimqyu .gt_center {
+#lmzsuoptvj .gt_center {
   text-align: center;
 }
 
-#vuumoimqyu .gt_right {
+#lmzsuoptvj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#vuumoimqyu .gt_font_normal {
+#lmzsuoptvj .gt_font_normal {
   font-weight: normal;
 }
 
-#vuumoimqyu .gt_font_bold {
+#lmzsuoptvj .gt_font_bold {
   font-weight: bold;
 }
 
-#vuumoimqyu .gt_font_italic {
+#lmzsuoptvj .gt_font_italic {
   font-style: italic;
 }
 
-#vuumoimqyu .gt_super {
+#lmzsuoptvj .gt_super {
   font-size: 65%;
 }
 
-#vuumoimqyu .gt_footnote_marks {
+#lmzsuoptvj .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#vuumoimqyu .gt_asterisk {
+#lmzsuoptvj .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#vuumoimqyu .gt_indent_1 {
+#lmzsuoptvj .gt_indent_1 {
   text-indent: 5px;
 }
 
-#vuumoimqyu .gt_indent_2 {
+#lmzsuoptvj .gt_indent_2 {
   text-indent: 10px;
 }
 
-#vuumoimqyu .gt_indent_3 {
+#lmzsuoptvj .gt_indent_3 {
   text-indent: 15px;
 }
 
-#vuumoimqyu .gt_indent_4 {
+#lmzsuoptvj .gt_indent_4 {
   text-indent: 20px;
 }
 
-#vuumoimqyu .gt_indent_5 {
+#lmzsuoptvj .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
 <table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
   <thead>
+    <tr class="gt_heading">
+      <td colspan="3" class="gt_heading gt_title gt_font_normal" style="color: #000000; text-align: left; font-weight: bold;">Is Stephen Curry The Greatest Shooter Ever</td>
+    </tr>
+    <tr class="gt_heading">
+      <td colspan="3" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="color: #000000; text-align: left;">Stephen Curry continues to increase his all time shooting record with great 2024 season.</td>
+    </tr>
     <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Season">Season</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="3P">3P</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="3P%">3P%</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-size: 12; font-weight: bold;" scope="col" id="Season">Season</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-size: 12; font-weight: bold;" scope="col" id="Total Threes">Total Threes</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-size: 12; font-weight: bold;" scope="col" id="Three Point Percentage">Three Point Percentage</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
     <tr><td headers="Season" class="gt_row gt_right">2024</td>
 <td headers="3P" class="gt_row gt_right">357</td>
-<td headers="3P%" class="gt_row gt_right">0.408</td></tr>
-    <tr><td headers="Season" class="gt_row gt_right">2023</td>
-<td headers="3P" class="gt_row gt_right">273</td>
-<td headers="3P%" class="gt_row gt_right">0.427</td></tr>
+<td headers="3P%" class="gt_row gt_right">40.8%</td></tr>
+    <tr><td headers="Season" class="gt_row gt_right gt_striped">2023</td>
+<td headers="3P" class="gt_row gt_right gt_striped">273</td>
+<td headers="3P%" class="gt_row gt_right gt_striped">42.7%</td></tr>
     <tr><td headers="Season" class="gt_row gt_right">2022</td>
 <td headers="3P" class="gt_row gt_right">285</td>
-<td headers="3P%" class="gt_row gt_right">0.380</td></tr>
-    <tr><td headers="Season" class="gt_row gt_right">2021</td>
-<td headers="3P" class="gt_row gt_right">337</td>
-<td headers="3P%" class="gt_row gt_right">0.421</td></tr>
+<td headers="3P%" class="gt_row gt_right">38.0%</td></tr>
+    <tr><td headers="Season" class="gt_row gt_right gt_striped">2021</td>
+<td headers="3P" class="gt_row gt_right gt_striped">337</td>
+<td headers="3P%" class="gt_row gt_right gt_striped">42.1%</td></tr>
     <tr><td headers="Season" class="gt_row gt_right">2020</td>
 <td headers="3P" class="gt_row gt_right">12</td>
-<td headers="3P%" class="gt_row gt_right">0.245</td></tr>
-    <tr><td headers="Season" class="gt_row gt_right">2019</td>
-<td headers="3P" class="gt_row gt_right">354</td>
-<td headers="3P%" class="gt_row gt_right">0.437</td></tr>
+<td headers="3P%" class="gt_row gt_right">24.5%</td></tr>
+    <tr><td headers="Season" class="gt_row gt_right gt_striped">2019</td>
+<td headers="3P" class="gt_row gt_right gt_striped">354</td>
+<td headers="3P%" class="gt_row gt_right gt_striped">43.7%</td></tr>
     <tr><td headers="Season" class="gt_row gt_right">2018</td>
 <td headers="3P" class="gt_row gt_right">212</td>
-<td headers="3P%" class="gt_row gt_right">0.423</td></tr>
-    <tr><td headers="Season" class="gt_row gt_right">2017</td>
-<td headers="3P" class="gt_row gt_right">324</td>
-<td headers="3P%" class="gt_row gt_right">0.411</td></tr>
+<td headers="3P%" class="gt_row gt_right">42.3%</td></tr>
+    <tr><td headers="Season" class="gt_row gt_right gt_striped">2017</td>
+<td headers="3P" class="gt_row gt_right gt_striped">324</td>
+<td headers="3P%" class="gt_row gt_right gt_striped">41.1%</td></tr>
     <tr><td headers="Season" class="gt_row gt_right">2016</td>
 <td headers="3P" class="gt_row gt_right">402</td>
-<td headers="3P%" class="gt_row gt_right">0.454</td></tr>
-    <tr><td headers="Season" class="gt_row gt_right">2015</td>
-<td headers="3P" class="gt_row gt_right">286</td>
-<td headers="3P%" class="gt_row gt_right">0.443</td></tr>
+<td headers="3P%" class="gt_row gt_right">45.4%</td></tr>
+    <tr><td headers="Season" class="gt_row gt_right gt_striped">2015</td>
+<td headers="3P" class="gt_row gt_right gt_striped">286</td>
+<td headers="3P%" class="gt_row gt_right gt_striped">44.3%</td></tr>
     <tr><td headers="Season" class="gt_row gt_right">2014</td>
 <td headers="3P" class="gt_row gt_right">261</td>
-<td headers="3P%" class="gt_row gt_right">0.424</td></tr>
-    <tr><td headers="Season" class="gt_row gt_right">2013</td>
-<td headers="3P" class="gt_row gt_right">272</td>
-<td headers="3P%" class="gt_row gt_right">0.453</td></tr>
+<td headers="3P%" class="gt_row gt_right">42.4%</td></tr>
+    <tr><td headers="Season" class="gt_row gt_right gt_striped">2013</td>
+<td headers="3P" class="gt_row gt_right gt_striped">272</td>
+<td headers="3P%" class="gt_row gt_right gt_striped">45.3%</td></tr>
     <tr><td headers="Season" class="gt_row gt_right">2012</td>
 <td headers="3P" class="gt_row gt_right">55</td>
-<td headers="3P%" class="gt_row gt_right">0.455</td></tr>
-    <tr><td headers="Season" class="gt_row gt_right">2011</td>
-<td headers="3P" class="gt_row gt_right">151</td>
-<td headers="3P%" class="gt_row gt_right">0.442</td></tr>
+<td headers="3P%" class="gt_row gt_right">45.5%</td></tr>
+    <tr><td headers="Season" class="gt_row gt_right gt_striped">2011</td>
+<td headers="3P" class="gt_row gt_right gt_striped">151</td>
+<td headers="3P%" class="gt_row gt_right gt_striped">44.2%</td></tr>
     <tr><td headers="Season" class="gt_row gt_right">2010</td>
 <td headers="3P" class="gt_row gt_right">166</td>
-<td headers="3P%" class="gt_row gt_right">0.437</td></tr>
+<td headers="3P%" class="gt_row gt_right">43.7%</td></tr>
   </tbody>
-  
+  <tfoot class="gt_sourcenotes">
+    <tr>
+      <td class="gt_sourcenote" colspan="3"><strong>By:</strong> Koy Jorgenson  |  <strong>Source:</strong> Basketball Reference: Stephen Curry stats, height, weight, position, draft status and more. Basketball. (n.d.). <a href="https://www.basketball-reference.com/players/c/curryst01.html">https://www.basketball-reference.com/players/c/curryst01.html</a></td>
+    </tr>
+  </tfoot>
   
 </table>
 </div>
 </div>
 </div>
+<p>Finishing 2024 with a great resume of 357 threes, which already adds on to the large amount that he currently has. One begs the question assuming he plays four more years, how many more threes he can make.</p>
+<p>Let’s look at some projected data.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -729,27 +773,51 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="st">`</span><span class="at">3P</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"3747"</span>)</span>
 <span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>ProjectedThrees <span class="sc">|&gt;</span> </span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">3P</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"Career Three Pointers"</span>,</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">ProjectedCareerThrees =</span> <span class="st">"Projected Threes"</span>,</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">TotalProjectedThrees =</span> <span class="st">"Total Projected Threes"</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Is Anyone Ever Going To Touch This Record?"</span>,</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Stephen Curry still has some more basketball in how many more threes can he put up?"</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> <span class="fu">tab_style</span>(</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_text</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">weight =</span> <span class="st">"bold"</span>, <span class="at">align =</span> <span class="st">"left"</span>),</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_title</span>(<span class="st">"title"</span>)</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> <span class="fu">tab_style</span>(</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_text</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">align =</span> <span class="st">"left"</span>),</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_title</span>(<span class="st">"subtitle"</span>)</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_source_note</span>(</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">source_note =</span> <span class="fu">md</span>(<span class="st">"**By:** Koy Jorgenson  |  **Source:** Basketball Reference: Stephen Curry stats, height, weight, position, draft status and more. Basketball. (n.d.). https://www.basketball-reference.com/players/c/curryst01.html"</span>)</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>     <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(<span class="at">columns =</span> <span class="fu">everything</span>()),</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>     <span class="at">style =</span> <span class="fu">list</span>(</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>       <span class="fu">cell_borders</span>(<span class="at">sides =</span> <span class="st">"bottom"</span>, <span class="at">weight =</span> <span class="fu">px</span>(<span class="dv">3</span>)),</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>       <span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>, <span class="at">size=</span><span class="dv">12</span>)</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>     ))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 
-<div id="ixfqijstwu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ixfqijstwu table {
+<div id="cclcwzikhx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#cclcwzikhx table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ixfqijstwu thead, #ixfqijstwu tbody, #ixfqijstwu tfoot, #ixfqijstwu tr, #ixfqijstwu td, #ixfqijstwu th {
+#cclcwzikhx thead, #cclcwzikhx tbody, #cclcwzikhx tfoot, #cclcwzikhx tr, #cclcwzikhx td, #cclcwzikhx th {
   border-style: none;
 }
 
-#ixfqijstwu p {
+#cclcwzikhx p {
   margin: 0;
   padding: 0;
 }
 
-#ixfqijstwu .gt_table {
+#cclcwzikhx .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -775,12 +843,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#ixfqijstwu .gt_caption {
+#cclcwzikhx .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ixfqijstwu .gt_title {
+#cclcwzikhx .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -792,7 +860,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#ixfqijstwu .gt_subtitle {
+#cclcwzikhx .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -804,7 +872,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#ixfqijstwu .gt_heading {
+#cclcwzikhx .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -816,13 +884,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ixfqijstwu .gt_bottom_border {
+#cclcwzikhx .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ixfqijstwu .gt_col_headings {
+#cclcwzikhx .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -837,7 +905,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ixfqijstwu .gt_col_heading {
+#cclcwzikhx .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -857,7 +925,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#ixfqijstwu .gt_column_spanner_outer {
+#cclcwzikhx .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -869,15 +937,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#ixfqijstwu .gt_column_spanner_outer:first-child {
+#cclcwzikhx .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ixfqijstwu .gt_column_spanner_outer:last-child {
+#cclcwzikhx .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ixfqijstwu .gt_column_spanner {
+#cclcwzikhx .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -889,11 +957,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#ixfqijstwu .gt_spanner_row {
+#cclcwzikhx .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ixfqijstwu .gt_group_heading {
+#cclcwzikhx .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -919,7 +987,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#ixfqijstwu .gt_empty_group_heading {
+#cclcwzikhx .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -934,15 +1002,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#ixfqijstwu .gt_from_md > :first-child {
+#cclcwzikhx .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ixfqijstwu .gt_from_md > :last-child {
+#cclcwzikhx .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ixfqijstwu .gt_row {
+#cclcwzikhx .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -961,7 +1029,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#ixfqijstwu .gt_stub {
+#cclcwzikhx .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -974,7 +1042,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ixfqijstwu .gt_stub_row_group {
+#cclcwzikhx .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -988,15 +1056,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#ixfqijstwu .gt_row_group_first td {
+#cclcwzikhx .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ixfqijstwu .gt_row_group_first th {
+#cclcwzikhx .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ixfqijstwu .gt_summary_row {
+#cclcwzikhx .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1006,16 +1074,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ixfqijstwu .gt_first_summary_row {
+#cclcwzikhx .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ixfqijstwu .gt_first_summary_row.thick {
+#cclcwzikhx .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ixfqijstwu .gt_last_summary_row {
+#cclcwzikhx .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1025,7 +1093,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#ixfqijstwu .gt_grand_summary_row {
+#cclcwzikhx .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1035,7 +1103,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ixfqijstwu .gt_first_grand_summary_row {
+#cclcwzikhx .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1045,7 +1113,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#ixfqijstwu .gt_last_grand_summary_row_top {
+#cclcwzikhx .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1055,11 +1123,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#ixfqijstwu .gt_striped {
+#cclcwzikhx .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ixfqijstwu .gt_table_body {
+#cclcwzikhx .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1068,7 +1136,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#ixfqijstwu .gt_footnotes {
+#cclcwzikhx .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1082,7 +1150,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ixfqijstwu .gt_footnote {
+#cclcwzikhx .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1091,7 +1159,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ixfqijstwu .gt_sourcenotes {
+#cclcwzikhx .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1105,7 +1173,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ixfqijstwu .gt_sourcenote {
+#cclcwzikhx .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1113,73 +1181,79 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ixfqijstwu .gt_left {
+#cclcwzikhx .gt_left {
   text-align: left;
 }
 
-#ixfqijstwu .gt_center {
+#cclcwzikhx .gt_center {
   text-align: center;
 }
 
-#ixfqijstwu .gt_right {
+#cclcwzikhx .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ixfqijstwu .gt_font_normal {
+#cclcwzikhx .gt_font_normal {
   font-weight: normal;
 }
 
-#ixfqijstwu .gt_font_bold {
+#cclcwzikhx .gt_font_bold {
   font-weight: bold;
 }
 
-#ixfqijstwu .gt_font_italic {
+#cclcwzikhx .gt_font_italic {
   font-style: italic;
 }
 
-#ixfqijstwu .gt_super {
+#cclcwzikhx .gt_super {
   font-size: 65%;
 }
 
-#ixfqijstwu .gt_footnote_marks {
+#cclcwzikhx .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ixfqijstwu .gt_asterisk {
+#cclcwzikhx .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ixfqijstwu .gt_indent_1 {
+#cclcwzikhx .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ixfqijstwu .gt_indent_2 {
+#cclcwzikhx .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ixfqijstwu .gt_indent_3 {
+#cclcwzikhx .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ixfqijstwu .gt_indent_4 {
+#cclcwzikhx .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ixfqijstwu .gt_indent_5 {
+#cclcwzikhx .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
 <table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
   <thead>
+    <tr class="gt_heading">
+      <td colspan="4" class="gt_heading gt_title gt_font_normal" style="color: #000000; text-align: left; font-weight: bold;">Is Anyone Ever Going To Touch This Record?</td>
+    </tr>
+    <tr class="gt_heading">
+      <td colspan="4" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="color: #000000; text-align: left;">Stephen Curry still has some more basketball in how many more threes can he put up?</td>
+    </tr>
     <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Season">Season</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="3P">3P</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="ProjectedCareerThrees">ProjectedCareerThrees</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="TotalProjectedThrees">TotalProjectedThrees</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-size: 12; font-weight: bold;" scope="col" id="Season">Season</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-size: 12; font-weight: bold;" scope="col" id="Career Three Pointers">Career Three Pointers</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-size: 12; font-weight: bold;" scope="col" id="Projected Threes">Projected Threes</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-size: 12; font-weight: bold;" scope="col" id="Total Projected Threes">Total Projected Threes</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
@@ -1188,40 +1262,83 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td headers="ProjectedCareerThrees" class="gt_row gt_right">936.75</td>
 <td headers="TotalProjectedThrees" class="gt_row gt_right">4683.75</td></tr>
   </tbody>
-  
+  <tfoot class="gt_sourcenotes">
+    <tr>
+      <td class="gt_sourcenote" colspan="4"><strong>By:</strong> Koy Jorgenson  |  <strong>Source:</strong> Basketball Reference: Stephen Curry stats, height, weight, position, draft status and more. Basketball. (n.d.). <a href="https://www.basketball-reference.com/players/c/curryst01.html">https://www.basketball-reference.com/players/c/curryst01.html</a></td>
+    </tr>
+  </tfoot>
   
 </table>
 </div>
 </div>
 </div>
+<p>It’s crazy to think about if he keeps playing until he’s 40 that he might hit around 4,700 three pointers. With that we need to find out if there is anyone in the modern NBA era right now that could break the record in about 10 years. Below you’ll find that there are a few candidates that are likely to breake the record. One being the great sharpshooter Buddy Hield from the Philadelphia 76ers and Damian Lillard from the Milwaukee Bucks. It will be interesting in the future to see if they can reach new heights.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>Top10Threes <span class="ot">&lt;-</span> ModernThrees <span class="sc">|&gt;</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="st">`</span><span class="at">3P</span><span class="st">`</span> <span class="sc">&gt;</span> <span class="dv">1900</span>) </span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>Top10Threes <span class="sc">|&gt;</span> <span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>Top10Threes <span class="sc">|&gt;</span> </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">3P</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"Career Three Pointers"</span>,</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"In The Modern NBA Who has A Chance To Break The Record"</span>,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"In the modern NBA there are a few players that could move up and break the record."</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> <span class="fu">tab_style</span>(</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_text</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">weight =</span> <span class="st">"bold"</span>, <span class="at">align =</span> <span class="st">"left"</span>),</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_title</span>(<span class="st">"title"</span>)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> <span class="fu">tab_style</span>(</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_text</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">align =</span> <span class="st">"left"</span>),</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_title</span>(<span class="st">"subtitle"</span>)</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_source_note</span>(</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">source_note =</span> <span class="fu">md</span>(<span class="st">"**By:** Koy Jorgenson  |  **Source:** Basketball Reference: NBA &amp; ABA Active Leaders and records for 3-PT field goals. Basketball. (n.d.-a). https://www.basketball-reference.com/leaders/fg3_active.html#stats_active_fg3"</span>)</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>     <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(<span class="at">columns =</span> <span class="fu">everything</span>()),</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>     <span class="at">style =</span> <span class="fu">list</span>(</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>       <span class="fu">cell_borders</span>(<span class="at">sides =</span> <span class="st">"bottom"</span>, <span class="at">weight =</span> <span class="fu">px</span>(<span class="dv">3</span>)),</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>       <span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>, <span class="at">size=</span><span class="dv">12</span>)</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>     )) <span class="sc">|&gt;</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">list</span>(</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cell_fill</span>(<span class="at">color =</span> <span class="st">"blue"</span>),</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cell_text</span>(<span class="at">color =</span> <span class="st">"white"</span>)</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>(</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>      <span class="at">rows =</span> Player <span class="sc">==</span> <span class="st">"Buddy Hield"</span>)</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_style</span>(</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">list</span>(</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cell_fill</span>(<span class="at">color =</span> <span class="st">"#00471B"</span>),</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cell_text</span>(<span class="at">color =</span> <span class="st">"white"</span>)</span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>(</span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>      <span class="at">rows =</span> Player <span class="sc">==</span> <span class="st">"Damian Lillard"</span>)</span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>  ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 
-<div id="ezmnyattyt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ezmnyattyt table {
+<div id="djqopceudj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#djqopceudj table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ezmnyattyt thead, #ezmnyattyt tbody, #ezmnyattyt tfoot, #ezmnyattyt tr, #ezmnyattyt td, #ezmnyattyt th {
+#djqopceudj thead, #djqopceudj tbody, #djqopceudj tfoot, #djqopceudj tr, #djqopceudj td, #djqopceudj th {
   border-style: none;
 }
 
-#ezmnyattyt p {
+#djqopceudj p {
   margin: 0;
   padding: 0;
 }
 
-#ezmnyattyt .gt_table {
+#djqopceudj .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1247,12 +1364,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#ezmnyattyt .gt_caption {
+#djqopceudj .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ezmnyattyt .gt_title {
+#djqopceudj .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1264,7 +1381,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#ezmnyattyt .gt_subtitle {
+#djqopceudj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1276,7 +1393,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#ezmnyattyt .gt_heading {
+#djqopceudj .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1288,13 +1405,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ezmnyattyt .gt_bottom_border {
+#djqopceudj .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ezmnyattyt .gt_col_headings {
+#djqopceudj .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1309,7 +1426,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ezmnyattyt .gt_col_heading {
+#djqopceudj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1329,7 +1446,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#ezmnyattyt .gt_column_spanner_outer {
+#djqopceudj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1341,15 +1458,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#ezmnyattyt .gt_column_spanner_outer:first-child {
+#djqopceudj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ezmnyattyt .gt_column_spanner_outer:last-child {
+#djqopceudj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ezmnyattyt .gt_column_spanner {
+#djqopceudj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1361,11 +1478,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#ezmnyattyt .gt_spanner_row {
+#djqopceudj .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ezmnyattyt .gt_group_heading {
+#djqopceudj .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1391,7 +1508,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#ezmnyattyt .gt_empty_group_heading {
+#djqopceudj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1406,15 +1523,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#ezmnyattyt .gt_from_md > :first-child {
+#djqopceudj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ezmnyattyt .gt_from_md > :last-child {
+#djqopceudj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ezmnyattyt .gt_row {
+#djqopceudj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1433,7 +1550,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#ezmnyattyt .gt_stub {
+#djqopceudj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1446,7 +1563,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ezmnyattyt .gt_stub_row_group {
+#djqopceudj .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1460,15 +1577,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#ezmnyattyt .gt_row_group_first td {
+#djqopceudj .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ezmnyattyt .gt_row_group_first th {
+#djqopceudj .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ezmnyattyt .gt_summary_row {
+#djqopceudj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1478,16 +1595,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ezmnyattyt .gt_first_summary_row {
+#djqopceudj .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ezmnyattyt .gt_first_summary_row.thick {
+#djqopceudj .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ezmnyattyt .gt_last_summary_row {
+#djqopceudj .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1497,7 +1614,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#ezmnyattyt .gt_grand_summary_row {
+#djqopceudj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1507,7 +1624,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ezmnyattyt .gt_first_grand_summary_row {
+#djqopceudj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1517,7 +1634,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#ezmnyattyt .gt_last_grand_summary_row_top {
+#djqopceudj .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1527,11 +1644,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#ezmnyattyt .gt_striped {
+#djqopceudj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ezmnyattyt .gt_table_body {
+#djqopceudj .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1540,7 +1657,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#ezmnyattyt .gt_footnotes {
+#djqopceudj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1554,7 +1671,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ezmnyattyt .gt_footnote {
+#djqopceudj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1563,7 +1680,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ezmnyattyt .gt_sourcenotes {
+#djqopceudj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1577,7 +1694,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ezmnyattyt .gt_sourcenote {
+#djqopceudj .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1585,73 +1702,79 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ezmnyattyt .gt_left {
+#djqopceudj .gt_left {
   text-align: left;
 }
 
-#ezmnyattyt .gt_center {
+#djqopceudj .gt_center {
   text-align: center;
 }
 
-#ezmnyattyt .gt_right {
+#djqopceudj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ezmnyattyt .gt_font_normal {
+#djqopceudj .gt_font_normal {
   font-weight: normal;
 }
 
-#ezmnyattyt .gt_font_bold {
+#djqopceudj .gt_font_bold {
   font-weight: bold;
 }
 
-#ezmnyattyt .gt_font_italic {
+#djqopceudj .gt_font_italic {
   font-style: italic;
 }
 
-#ezmnyattyt .gt_super {
+#djqopceudj .gt_super {
   font-size: 65%;
 }
 
-#ezmnyattyt .gt_footnote_marks {
+#djqopceudj .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ezmnyattyt .gt_asterisk {
+#djqopceudj .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ezmnyattyt .gt_indent_1 {
+#djqopceudj .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ezmnyattyt .gt_indent_2 {
+#djqopceudj .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ezmnyattyt .gt_indent_3 {
+#djqopceudj .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ezmnyattyt .gt_indent_4 {
+#djqopceudj .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ezmnyattyt .gt_indent_5 {
+#djqopceudj .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
 <table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
   <thead>
+    <tr class="gt_heading">
+      <td colspan="4" class="gt_heading gt_title gt_font_normal" style="color: #000000; text-align: left; font-weight: bold;">In The Modern NBA Who has A Chance To Break The Record</td>
+    </tr>
+    <tr class="gt_heading">
+      <td colspan="4" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="color: #000000; text-align: left;">In the modern NBA there are a few players that could move up and break the record.</td>
+    </tr>
     <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Rank">Rank</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Player">Player</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="3P">3P</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Age">Age</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-size: 12; font-weight: bold;" scope="col" id="Rank">Rank</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-size: 12; font-weight: bold;" scope="col" id="Player">Player</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-size: 12; font-weight: bold;" scope="col" id="Career Three Pointers">Career Three Pointers</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-size: 12; font-weight: bold;" scope="col" id="Age">Age</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
@@ -1663,10 +1786,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td headers="Player" class="gt_row gt_left">James Harden</td>
 <td headers="3P" class="gt_row gt_right">2940</td>
 <td headers="Age" class="gt_row gt_right">35</td></tr>
-    <tr><td headers="Rank" class="gt_row gt_right">3</td>
-<td headers="Player" class="gt_row gt_left">Damian Lillard</td>
-<td headers="3P" class="gt_row gt_right">2607</td>
-<td headers="Age" class="gt_row gt_right">33</td></tr>
+    <tr><td headers="Rank" class="gt_row gt_right" style="background-color: #00471B; color: #FFFFFF;">3</td>
+<td headers="Player" class="gt_row gt_left" style="background-color: #00471B; color: #FFFFFF;">Damian Lillard</td>
+<td headers="3P" class="gt_row gt_right" style="background-color: #00471B; color: #FFFFFF;">2607</td>
+<td headers="Age" class="gt_row gt_right" style="background-color: #00471B; color: #FFFFFF;">33</td></tr>
     <tr><td headers="Rank" class="gt_row gt_right">4</td>
 <td headers="Player" class="gt_row gt_left">Klay Thompson</td>
 <td headers="3P" class="gt_row gt_right">2481</td>
@@ -1691,27 +1814,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td headers="Player" class="gt_row gt_left">Eric Gordon</td>
 <td headers="3P" class="gt_row gt_right">2028</td>
 <td headers="Age" class="gt_row gt_right">35</td></tr>
-    <tr><td headers="Rank" class="gt_row gt_right">10</td>
-<td headers="Player" class="gt_row gt_left">Buddy Hield</td>
-<td headers="3P" class="gt_row gt_right">1924</td>
-<td headers="Age" class="gt_row gt_right">31</td></tr>
+    <tr><td headers="Rank" class="gt_row gt_right" style="background-color: #0000FF; color: #FFFFFF;">10</td>
+<td headers="Player" class="gt_row gt_left" style="background-color: #0000FF; color: #FFFFFF;">Buddy Hield</td>
+<td headers="3P" class="gt_row gt_right" style="background-color: #0000FF; color: #FFFFFF;">1924</td>
+<td headers="Age" class="gt_row gt_right" style="background-color: #0000FF; color: #FFFFFF;">31</td></tr>
   </tbody>
-  
+  <tfoot class="gt_sourcenotes">
+    <tr>
+      <td class="gt_sourcenote" colspan="4"><strong>By:</strong> Koy Jorgenson  |  <strong>Source:</strong> Basketball Reference: NBA &amp; ABA Active Leaders and records for 3-PT field goals. Basketball. (n.d.-a). <a href="https://www.basketball-reference.com/leaders/fg3_active.html#stats_active_fg3">https://www.basketball-reference.com/leaders/fg3_active.html#stats_active_fg3</a></td>
+    </tr>
+  </tfoot>
   
 </table>
 </div>
 </div>
 </div>
+<p>Now let’s take a quick look to see how far ahead Stephen Curry is of the current league, a player still playing on three-point totals. This way we can see if there is anyone remotely close to him right now.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data=</span>Top10Threes, <span class="fu">aes</span>(<span class="at">x=</span><span class="st">`</span><span class="at">3P</span><span class="st">`</span>, <span class="at">y=</span>Player))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data=</span>Top10Threes, <span class="fu">aes</span>(<span class="at">x=</span><span class="st">`</span><span class="at">3P</span><span class="st">`</span>, <span class="at">y=</span>Player)) <span class="sc">+</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">x=</span><span class="st">"Total Three Pointers"</span>, </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y=</span><span class="st">"Player"</span>, </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title=</span><span class="st">"Are Stephen Curry's Three Point Numbers Untouchable?"</span>, </span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle=</span><span class="st">"Here listed is the top ten three point shooters in the modern NBA and where they stand."</span>, </span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption=</span><span class="st">"Source: Basketball Reference | Koy Jorgenson"</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="fu">theme</span>(</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title.y =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>   <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<p>It’ll be interesting where the future of the NBA takes us with three-point shooting considering Stephen Curry started the love for shooting the three ball and change the game. Although we don’t know how long he is going to play we do know that although his record is almost unreachable there are a few candidates in the league that could potentially break his record.</p>
 
 
 
